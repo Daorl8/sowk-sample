@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SOWK · Somewhere Only We Know | Coffee, Dessert &amp; Wine in Cheongju</title>
+<meta name="description" content="SOWK, a hideaway cafe by the back gate of Seowon University, Cheongju. Good coffee, sweet desserts and a glass of wine. 서원대 후문 카페 소크. 토~목 12:00~23:00, 금요일 휴무." />
+<link rel="canonical" href="https://sowk-sample.lgt3232.workers.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="SOWK" />
+<meta property="og:title" content="SOWK · Somewhere Only We Know" />
+<meta property="og:description" content="Coffee, sweet desserts and a glass of wine. 서원대 후문 카페 SOWK." />
+<meta property="og:url" content="https://sowk-sample.lgt3232.workers.dev/" />
+<meta property="og:image" content="https://sowk-sample.lgt3232.workers.dev/og-sowk.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#F3F3F3" />
+<link rel="icon" href="favicon.png" type="image/png" />
+<!-- 시안 도메인 = sowk-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical·og:url·og:image·JSON-LD url/image 치환 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "SOWK 소크",
+  "alternateName": "Somewhere Only We Know",
+  "url": "https://sowk-sample.lgt3232.workers.dev/",
+  "image": "https://sowk-sample.lgt3232.workers.dev/og-sowk.jpg",
+  "telephone": "+82-507-1411-1680",
+  "address": { "@type": "PostalAddress", "streetAddress": "서원남로 30 1층", "addressLocality": "청주시 서원구", "addressRegion": "충청북도", "addressCountry": "KR" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "12:00", "closes": "23:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/sowkcoffee/"]
+}
+</script>
+<style>
+@font-face{ font-family:"SW Sans"; font-weight:400 700; font-display:swap; src:url("sw-intertight.woff2") format("woff2"); }
+@font-face{ font-family:"SW Kr"; font-weight:400 600; font-display:swap; src:url("sw-pretendard.woff2") format("woff2"); }
+
+:root{
+  --paper:#F3F3F3;
+  --white:#FFFFFF;
+  --ink:#151515;
+  --soft:#5C5C5C;
+  --line:#D6D6D6;
+  --night:#151515;
+  --night-ink:#EDEDED;
+  --night-soft:#A8A8A8;
+  --r:2px;
+  --sans:"SW Sans","SW Kr",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{ font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.6; font-size:16px; -webkit-font-smoothing:antialiased; }
+body::before{ content:""; position:fixed; inset:0; z-index:100; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; }
+:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+.night :focus-visible{ outline-color:var(--night-ink); }
+.ko{ font-family:"SW Kr","SW Sans",system-ui,sans-serif; }
+.wrap{ width:min(100% - 40px, 1180px); margin-inline:auto; }
+
+/* 헤더 */
+.top{ position:sticky; top:0; z-index:50; background:rgba(243,243,243,.94); border-bottom:1px solid var(--line); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); }
+.top .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; height:60px; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+.brand img{ width:34px; height:auto; }
+.brand b{ font-weight:700; font-size:1.05rem; letter-spacing:.14em; }
+.nav{ display:none; gap:28px; font-size:.92rem; }
+.nav a{ text-decoration:none; color:var(--soft); }
+.top .btn{ min-height:40px; padding:0 16px; font-size:.86rem; }
+@media (min-width:900px){ .nav{ display:flex; } }
+@media (max-width:899px){ .top .btn{ display:none; } }
+@media (hover:hover){ .nav a:hover{ color:var(--ink); } }
+
+/* 버튼 */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:0 22px; border:1px solid var(--ink); border-radius:var(--r); text-decoration:none; font-weight:600; font-size:.95rem; letter-spacing:.01em; transition:background-color .2s, color .2s, transform .1s; }
+.btn.fill{ background:var(--ink); color:var(--white); }
+.btn:active{ transform:scale(.98); }
+@media (hover:hover){ .btn:hover{ background:var(--ink); color:var(--white); } .btn.fill:hover{ background:#2E2E2E; } }
+
+/* 공통 섹션 */
+.sec{ padding:88px 0; }
+.label{ display:block; font-size:.78rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--soft); margin-bottom:14px; }
+h2{ font-weight:600; font-size:clamp(2rem, 6vw, 3.4rem); line-height:1.05; letter-spacing:-.02em; text-wrap:balance; }
+.lead{ color:var(--soft); max-width:36em; margin-top:16px; }
+
+/* 히어로 */
+.hero{ padding:40px 0 72px; }
+.hero-grid{ display:grid; gap:36px; }
+.stack{ font-weight:600; font-size:clamp(3.4rem, 15vw, 7.2rem); line-height:.92; letter-spacing:-.035em; }
+.stack span{ display:block; opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
+.stack span.on{ opacity:1; transform:none; }
+.hero .sub{ font-size:1.12rem; margin-top:28px; max-width:24em; }
+.hero .ko-sub{ color:var(--soft); font-size:.92rem; margin-top:8px; }
+.hours{ display:inline-flex; flex-wrap:wrap; gap:6px 14px; margin-top:22px; padding:10px 14px; border:1px solid var(--line); border-radius:var(--r); background:var(--white); font-size:.88rem; font-variant-numeric:tabular-nums; }
+.hours b{ font-weight:600; }
+.hero .cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.hero-photo{ position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:var(--r); background:#DDD; }
+.hero-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+@media (min-width:900px){
+  .hero{ padding:56px 0 96px; }
+  .hero-grid{ grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); align-items:center; gap:56px; }
+  .hero-photo{ aspect-ratio:auto; height:min(78svh, 680px); }
+}
+
+/* 소개 */
+.about{ background:var(--white); }
+.about-grid{ display:grid; gap:40px; align-items:center; }
+.about .fig{ width:min(100%, 460px); }
+.acro{ font-size:clamp(1.35rem, 4vw, 1.9rem); font-weight:500; letter-spacing:-.01em; line-height:1.3; margin-bottom:24px; color:var(--soft); }
+.acro b{ color:var(--ink); font-weight:700; }
+.about .story{ font-size:1.08rem; max-width:32em; }
+.about .story-ko{ margin-top:22px; padding-top:22px; border-top:1px solid var(--line); color:var(--soft); font-size:.94rem; max-width:34em; line-height:1.75; }
+@media (min-width:900px){ .about-grid{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:72px; } }
+
+/* 메뉴 */
+.menu-grid{ display:grid; gap:20px; margin-top:44px; }
+.mcard{ background:var(--white); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column; }
+.mcard figure{ aspect-ratio:4/5; overflow:hidden; background:#DDD; }
+.mcard figure img{ width:100%; height:100%; object-fit:cover; }
+.mcard .body{ padding:24px 22px 26px; }
+.mcard h3{ font-size:1.4rem; font-weight:600; letter-spacing:-.01em; }
+.mcard .when{ font-size:.84rem; color:var(--soft); margin-top:2px; }
+.mcard ul{ list-style:none; margin-top:16px; border-top:1px solid var(--line); }
+.mcard li{ padding:9px 0; border-bottom:1px solid var(--line); font-size:.95rem; }
+.mcard li small{ display:block; color:var(--soft); font-size:.82rem; }
+.menu-note{ margin-top:28px; display:grid; gap:6px; font-size:.9rem; color:var(--soft); }
+.menu-note b{ color:var(--ink); font-weight:600; }
+@media (min-width:640px) and (max-width:899px){ .menu-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); } .mcard:last-child{ grid-column:1 / -1; } .mcard:last-child figure{ aspect-ratio:16/9; } }
+@media (min-width:900px){ .menu-grid{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
+
+/* 공간 */
+.space{ background:var(--white); }
+.gallery{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin-top:44px; }
+.gallery figure{ position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:var(--r); background:#DDD; }
+.gallery img{ width:100%; height:100%; object-fit:cover; }
+.gallery figcaption{ position:absolute; left:0; right:0; bottom:0; padding:28px 12px 10px; font-size:.8rem; color:#FFFFFF; background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0)); }
+@media (min-width:900px){ .gallery{ grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; } .gallery figcaption{ font-size:.86rem; padding:36px 16px 14px; } }
+
+/* 밤 */
+.night{ background:var(--night); color:var(--night-ink); }
+.night .label, .night .lead{ color:var(--night-soft); }
+.night-grid{ display:grid; gap:36px; align-items:center; }
+.night .photo{ aspect-ratio:3/2; overflow:hidden; border-radius:var(--r); }
+.night .photo img{ width:100%; height:100%; object-fit:cover; }
+.night .fig{ width:96px; margin-bottom:28px; opacity:.9; }
+.night .btn{ border-color:var(--night-ink); margin-top:26px; }
+@media (hover:hover){ .night .btn:hover{ background:var(--night-ink); color:var(--night); } }
+@media (min-width:900px){ .night-grid{ grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:64px; } }
+
+/* 오시는 길 */
+.visit-grid{ display:grid; gap:32px; margin-top:44px; }
+.info{ display:grid; border-top:1px solid var(--line); }
+.info > div{ display:grid; grid-template-columns:88px minmax(0,1fr); gap:14px; padding:16px 0; border-bottom:1px solid var(--line); }
+.info dt{ font-size:.78rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--soft); padding-top:3px; }
+.info dd{ font-size:.98rem; font-variant-numeric:tabular-nums; }
+.info dd small{ display:block; color:var(--soft); font-size:.86rem; margin-top:2px; }
+.info a{ text-decoration:underline; text-underline-offset:3px; }
+.visit .cta{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin-top:24px; }
+.visit .cta .btn:first-child{ grid-column:1 / -1; }
+.media{ display:grid; gap:14px; }
+.media figure{ aspect-ratio:740/676; overflow:hidden; border-radius:var(--r); background:#DDD; }
+.media figure img{ width:100%; height:100%; object-fit:cover; }
+.map{ width:100%; height:260px; border:0; border-radius:var(--r); background:#DDD; display:block; }
+@media (min-width:768px){
+  .visit .cta{ display:flex; flex-wrap:wrap; }
+  .media{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+  .media figure{ aspect-ratio:auto; height:100%; min-height:320px; }
+  .map{ height:100%; min-height:320px; }
+}
+@media (min-width:1000px){ .visit-grid{ grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:48px; align-items:stretch; } }
+
+/* 푸터 */
+.foot{ border-top:1px solid var(--line); padding:56px 0 120px; font-size:.88rem; color:var(--soft); }
+.foot .fig{ width:120px; margin-bottom:22px; }
+.foot .name{ color:var(--ink); font-weight:700; letter-spacing:.14em; font-size:1.2rem; }
+.foot p + p{ margin-top:6px; }
+@media (min-width:900px){ .foot{ padding-bottom:56px; } }
+
+/* 모바일 하단 바 */
+.quick{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr); gap:6px; padding:8px 10px calc(8px + env(safe-area-inset-bottom)); background:var(--white); border-top:1px solid var(--line); }
+.quick a{ display:flex; align-items:center; justify-content:center; min-height:48px; border:1px solid var(--ink); border-radius:var(--r); font-size:.88rem; font-weight:600; text-decoration:none; }
+.quick a.fill{ background:var(--ink); color:var(--white); }
+@media (min-width:900px){ .quick{ display:none; } }
+
+/* 나타나기 */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease var(--d,0s), transform .8s ease var(--d,0s); }
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  .reveal, .stack span{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="SOWK home"><img src="sw-figure.svg" alt="" width="34" height="30" /><b>SOWK</b></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#space">Space</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn fill" href="https://map.naver.com/p/entry/place/2002921080" target="_blank" rel="noopener">Directions</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 class="stack" aria-label="Somewhere Only We Know"><span aria-hidden="true">Somewhere</span><span aria-hidden="true">Only</span><span aria-hidden="true">We</span><span aria-hidden="true">Know</span></h1>
+        <p class="sub reveal">A small hideaway for good coffee, sweet desserts and a glass of wine.</p>
+        <p class="ko-sub ko reveal" lang="ko">서원대 후문 카페 SOWK · 커피 · 디저트 · 와인</p>
+        <p class="hours reveal"><span><b>Sat–Thu</b> 12:00–23:00</span><span><b>Fri</b> Closed</span></p>
+        <div class="cta reveal">
+          <a class="btn fill" href="https://map.naver.com/p/entry/place/2002921080" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn" href="https://www.instagram.com/sowkcoffee/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="hero-photo reveal">
+        <img src="sw-hero.webp" alt="A round white table and wooden chairs in afternoon sunlight on a pine floor" width="1000" height="1250" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="sec about" id="about" aria-labelledby="about-h">
+    <div class="wrap about-grid">
+      <img class="fig reveal" src="sw-figure.svg" alt="SOWK logo: two figures holding hands" width="460" height="409" loading="lazy" />
+      <div>
+        <span class="label reveal">About</span>
+        <p class="acro reveal" id="about-h"><b>S</b>omewhere <b>O</b>nly <b>W</b>e <b>K</b>now</p>
+        <p class="story reveal">Everyone has a place they wish they could keep to themselves. SOWK was created from that feeling. A place to enjoy good coffee, share sweet desserts, and unwind with a glass of wine. At SOWK, we hope you'll find comfort, and a space that feels like your own.</p>
+        <p class="story-ko ko reveal" lang="ko">누구에게나 남몰래 간직하고 싶은 공간이 하나쯤은 있습니다. SOWK는 바로 그런 마음에서 시작되었습니다. 맛있는 커피를 즐기고 달콤한 디저트를 나누며 와인 한 잔과 함께 여유를 부릴 수 있는 곳. SOWK가 당신에게 안식처이자 마치 당신만의 공간처럼 느껴지는 곳이 되기를 바랍니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="menu" aria-labelledby="menu-h">
+    <div class="wrap">
+      <span class="label reveal">Menu</span>
+      <h2 id="menu-h" class="reveal">From the first coffee<br />to the last glass.</h2>
+      <div class="menu-grid">
+        <article class="mcard reveal">
+          <figure><img src="sw-latte.webp" alt="Two iced lattes on a white tray, seen from above" width="900" height="1200" loading="lazy" /></figure>
+          <div class="body">
+            <h3>Coffee &amp; Tea</h3>
+            <p class="when">For slow afternoons</p>
+            <ul>
+              <li>Americano · Café Latte · Vanilla Latte</li>
+              <li>Ades &amp; Iced Teas<small>Lemon · Lemon Matcha · Peach Black Tea · Yuja Hibiscus</small></li>
+              <li>Hot Teas<small>Rooibos · Chamomile · Earl Grey · Hibiscus · Lemon Peppermint</small></li>
+              <li>Lattes &amp; Juices<small>Grain Latte · Chocolate Latte · Apple Cinnamon Juice · Mango Banana Smoothie</small></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mcard reveal">
+          <figure><img src="sw-dessert.webp" alt="Basque cheesecake with an iced latte and iced tea on a tray" width="900" height="1125" loading="lazy" /></figure>
+          <div class="body">
+            <h3>Sweets</h3>
+            <p class="when">To share at the table</p>
+            <ul>
+              <li>Basque Cheesecake</li>
+              <li>Financier<small>Pecan · Chocolate Hazelnut · Fig</small></li>
+              <li>Mini Fruit Plate</li>
+              <li>Brie &amp; Crackers</li>
+            </ul>
+          </div>
+        </article>
+        <article class="mcard reveal">
+          <figure><img src="sw-wine.webp" alt="A glass of white wine with cheese and crackers beside a vase of flowers" width="900" height="1200" loading="lazy" /></figure>
+          <div class="body">
+            <h3>Wine &amp; Beer</h3>
+            <p class="when">Until 11 pm</p>
+            <ul>
+              <li>Red &amp; White by the Glass</li>
+              <li>Bottles<small>Red · White, dry or sweet</small></li>
+              <li>Draft Beer</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="menu-note reveal">
+        <p><b>Decaf</b> and <b>extra shots</b> available.</p>
+        <p>For prices and seasonal desserts, please ask at the counter or check our Instagram.</p>
+        <p class="ko" lang="ko">가격과 시즌 디저트는 매장이나 인스타그램에서 확인해 주세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec space" id="space" aria-labelledby="space-h">
+    <div class="wrap">
+      <span class="label reveal">Space</span>
+      <h2 id="space-h" class="reveal">Pine floors, white walls<br />and plenty of light.</h2>
+      <p class="lead reveal">Big windows, a reading corner and tables for one or for many.</p>
+      <div class="gallery">
+        <figure class="reveal"><img src="sw-window.webp" alt="Tables by the front windows with wine bottles on a high shelf" width="900" height="1200" loading="lazy" /><figcaption>By the window</figcaption></figure>
+        <figure class="reveal"><img src="sw-sofa.webp" alt="A striped sofa and glass coffee table under a mountain print" width="900" height="1126" loading="lazy" /><figcaption>The sofa corner</figcaption></figure>
+        <figure class="reveal"><img src="sw-shelf.webp" alt="A metal bookshelf and a tall potted plant against a white wall" width="900" height="1200" loading="lazy" /><figcaption>A shelf of books</figcaption></figure>
+        <figure class="reveal"><img src="sw-sun.webp" alt="A round table with chairs in strong afternoon sunlight through blinds" width="900" height="1125" loading="lazy" /><figcaption>Afternoon light</figcaption></figure>
+        <figure class="reveal"><img src="sw-table.webp" alt="A long wooden table for groups under pendant lamps" width="900" height="1200" loading="lazy" /><figcaption>The long table</figcaption></figure>
+        <figure class="reveal"><img src="sw-mat.webp" alt="The entrance doormat printed with two running figures and the word SOWK" width="900" height="1200" loading="lazy" /><figcaption>Look for the mat at our door</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec night" aria-labelledby="night-h">
+    <div class="wrap night-grid">
+      <div>
+        <img class="fig reveal" src="sw-figure-w.svg" alt="" width="96" height="85" loading="lazy" />
+        <span class="label reveal">After dark</span>
+        <h2 id="night-h" class="reveal">Coffee by day.<br />Wine by night.</h2>
+        <p class="lead reveal">We stay open until 11 pm, Saturday through Thursday. Come by after class or after work for a glass and something sweet.</p>
+        <a class="btn reveal" href="https://www.instagram.com/sowkcoffee/" target="_blank" rel="noopener">See what's new on Instagram</a>
+      </div>
+      <div class="photo reveal"><img src="sw-dusk.webp" alt="The cafe at night, lit from inside, seen through the large front windows" width="1080" height="720" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="sec visit" id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <span class="label reveal">Visit</span>
+      <h2 id="visit-h" class="reveal">Right by the back gate<br />of Seowon University.</h2>
+      <div class="visit-grid">
+        <div class="reveal">
+          <dl class="info">
+            <div><dt>Address</dt><dd>1F, 30 Seowonnam-ro, Seowon-gu, Cheongju<small class="ko" lang="ko">충북 청주시 서원구 서원남로 30 1층 · 서원대학교 후문</small></dd></div>
+            <div><dt>Bus</dt><dd>Get off at Cheongju Nonghyup stop, then about a 5-minute walk<small class="ko" lang="ko">청주농협 정류장 하차 후 도보 약 5분</small></dd></div>
+            <div><dt>Hours</dt><dd>Sat–Thu 12:00–23:00<small>Closed every Friday · Extra days off are posted on Instagram</small></dd></div>
+            <div><dt>Call</dt><dd><a href="tel:050714111680">0507-1411-1680</a></dd></div>
+          </dl>
+          <div class="cta">
+            <a class="btn fill" href="https://map.naver.com/p/entry/place/2002921080" target="_blank" rel="noopener">Naver Map directions</a>
+            <a class="btn" href="https://www.instagram.com/sowkcoffee/" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn" href="tel:050714111680">Call</a>
+          </div>
+        </div>
+        <div class="media reveal">
+          <figure><img src="sw-ext.webp" alt="SOWK's brick corner storefront at night with the name on the awning" width="740" height="676" loading="lazy" /></figure>
+          <iframe class="map" title="SOWK location map" src="https://www.google.com/maps?q=%EC%B6%A9%EB%B6%81%20%EC%B2%AD%EC%A3%BC%EC%8B%9C%20%EC%84%9C%EC%9B%90%EA%B5%AC%20%EC%84%9C%EC%9B%90%EB%82%A8%EB%A1%9C%2030&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img class="fig" src="sw-figure.svg" alt="" width="120" height="107" loading="lazy" />
+    <p class="name">SOWK</p>
+    <p>Somewhere Only We Know · Coffee, dessert &amp; wine</p>
+    <p><span class="ko" lang="ko">충북 청주시 서원구 서원남로 30 1층</span> · <a href="tel:050714111680">0507-1411-1680</a> · <a href="https://www.instagram.com/sowkcoffee/" target="_blank" rel="noopener">@sowkcoffee</a></p>
+    <p>© SOWK</p>
+  </div>
+</footer>
+
+<nav class="quick" aria-label="Quick links">
+  <a class="fill" href="https://map.naver.com/p/entry/place/2002921080" target="_blank" rel="noopener">Directions</a>
+  <a href="https://www.instagram.com/sowkcoffee/" target="_blank" rel="noopener">Instagram</a>
+  <a href="tel:050714111680">Call</a>
+</nav>
+
+<script>
+(function(){
+  /* 히어로 4줄: 한 줄씩 나타남 (setInterval) */
+  var words=[].slice.call(document.querySelectorAll('.stack span')), wi=0;
+  var wt=setInterval(function(){ if(wi>=words.length){ clearInterval(wt); return; } words[wi++].classList.add('on'); },220);
+  setTimeout(function(){ clearInterval(wt); words.forEach(function(w){ w.classList.add('on'); }); },3000);
+
+  /* 섹션 나타나기 */
+  var pending=[].slice.call(document.querySelectorAll('.reveal'));
+  pending.forEach(function(el){
+    var sib=[].slice.call(el.parentNode.children).filter(function(c){ return c.classList.contains('reveal'); });
+    if(sib.length>1 && !el.style.getPropertyValue('--d')){ el.style.setProperty('--d',(Math.min(sib.indexOf(el),4)*0.06)+'s'); }
+  });
+  function showAll(){ pending.forEach(function(el){ el.classList.add('in'); }); pending=[]; }
+  function start(){
+    var t=setInterval(function(){
+      if(!pending.length){ clearInterval(t); return; }
+      if(window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4){ showAll(); return; }
+      var line=window.innerHeight*0.92;
+      pending=pending.filter(function(el){
+        if(el.getBoundingClientRect().top < line){ el.classList.add('in'); return false; }
+        return true;
+      });
+    },120);
+  }
+  var started=false; function go(){ if(started) return; started=true; start(); }
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(go); }
+  setTimeout(go,1200);
+  setTimeout(function(){ document.querySelectorAll('.hero .reveal').forEach(function(el){ el.classList.add('in'); }); },1600);
+})();
+</script>
+</body>
+</html>
