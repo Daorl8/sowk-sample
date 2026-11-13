@@ -53,7 +53,7 @@
 }
 *{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-body{ font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.6; font-size:16px; -webkit-font-smoothing:antialiased; }
+body{ font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.6; font-size:16px; -webkit-font-smoothing:antialiased; word-break:keep-all; overflow-wrap:anywhere; }
 body::before{ content:""; position:fixed; inset:0; z-index:100; pointer-events:none; opacity:.06;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
 img{ max-width:100%; height:auto; display:block; }
@@ -280,7 +280,7 @@ h2{ font-weight:600; font-size:clamp(2rem, 6vw, 3.4rem); line-height:1.05; lette
           <figure><img src="sw-wine.webp" alt="A glass of white wine with cheese and crackers beside a vase of flowers" width="900" height="1200" loading="lazy" /></figure>
           <div class="body">
             <h3>Wine &amp; Beer</h3>
-            <p class="when">Until 11 pm</p>
+            <p class="when">Into the evening</p>
             <ul>
               <li>Red &amp; White by the Glass</li>
               <li>Bottles<small>Red · White, dry or sweet</small></li>
