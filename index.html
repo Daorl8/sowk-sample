@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+<script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SOWK · Somewhere Only We Know | Coffee, Dessert &amp; Wine in Cheongju</title>
 <meta name="description" content="SOWK, a hideaway cafe by the back gate of Seowon University, Cheongju. Good coffee, sweet desserts and a glass of wine. 서원대 후문 카페 소크. 토~목 12:00~23:00, 금요일 휴무." />
@@ -92,8 +93,9 @@ h2{ font-weight:600; font-size:clamp(2rem, 6vw, 3.4rem); line-height:1.05; lette
 .hero{ padding:40px 0 72px; }
 .hero-grid{ display:grid; gap:36px; }
 .stack{ font-weight:600; font-size:clamp(3.4rem, 15vw, 7.2rem); line-height:.92; letter-spacing:-.035em; }
-.stack span{ display:block; opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-.stack span.on{ opacity:1; transform:none; }
+.stack span{ display:block; }
+.js .stack span{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
+.js .stack span.on{ opacity:1; transform:none; }
 .stack{ font-weight:400; }
 .stack b{ font-weight:700; font-size:1.08em; line-height:0; }
 .hero .sub{ font-size:1.12rem; margin-top:28px; max-width:24em; }
@@ -191,10 +193,10 @@ h2{ font-weight:600; font-size:clamp(2rem, 6vw, 3.4rem); line-height:1.05; lette
 @media (min-width:900px){ .quick{ display:none; } }
 
 /* 나타나기 */
-.reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease var(--d,0s), transform .8s ease var(--d,0s); }
-.reveal.in{ opacity:1; transform:none; }
+.js .reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease var(--d,0s), transform .8s ease var(--d,0s); }
+.js .reveal.in{ opacity:1; transform:none; }
 @media (prefers-reduced-motion:reduce){
-  .reveal, .stack span{ opacity:1; transform:none; transition:none; }
+  .js .reveal, .js .stack span{ opacity:1; transform:none; transition:none; }
   html{ scroll-behavior:auto; }
 }
 </style>
@@ -308,7 +310,7 @@ h2{ font-weight:600; font-size:clamp(2rem, 6vw, 3.4rem); line-height:1.05; lette
         <figure class="reveal"><img src="sw-shelf.webp" alt="A metal bookshelf and a tall potted plant against a white wall" width="900" height="1200" loading="lazy" /><figcaption>A shelf of books</figcaption></figure>
         <figure class="reveal"><img src="sw-sun.webp" alt="A round table with chairs in strong afternoon sunlight through blinds" width="900" height="1125" loading="lazy" /><figcaption>Afternoon light</figcaption></figure>
         <figure class="reveal"><img src="sw-table.webp" alt="A long wooden table for groups under pendant lamps" width="900" height="1200" loading="lazy" /><figcaption>The long table</figcaption></figure>
-        <figure class="reveal"><img src="sw-mat.webp" alt="The entrance doormat printed with two running figures and the word SOWK" width="900" height="1200" loading="lazy" /><figcaption>Look for the mat at our door</figcaption></figure>
+        <figure class="reveal"><img src="sw-mat.webp" alt="The entrance doormat printed with two running figures and the word SOWK" width="780" height="1040" loading="lazy" /><figcaption>Look for the mat at our door</figcaption></figure>
       </div>
     </div>
   </section>
